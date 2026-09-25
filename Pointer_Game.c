@@ -29,7 +29,7 @@ int main(void){
   scanf("%d", &choice);
 
   if (choice == 1){
-  printf("\nWe need you to fight %d monsters nearby.\n", easy);
+  printf("\nWe need you to fight level %d monsters nearby.\n", easy);
   sleep(1);
   
   int attack;
@@ -67,12 +67,14 @@ int main(void){
         printf("Congrats on Defeating the Enemy!\n");
       }
 
-      int value = rand() % (easy_high - easy_low + 1) + easy_low;
-      player_health = player_health - value;
-      sleep(0.5);
-      printf("\nThe Enemy Dealt %d damage!\n", value);
-      printf("Your Health: %d\n", player_health);
-      sleep(0.5);
+      if (easy_health < 0){
+        int value = rand() % (easy_high - easy_low + 1) + easy_low;
+        player_health = player_health - value;
+        sleep(0.5);
+        printf("\nThe Enemy Dealt %d damage!\n", value);
+        printf("Your Health: %d\n", player_health);
+        sleep(0.5);
+      }
     }
 
   }
