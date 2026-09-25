@@ -63,21 +63,24 @@ int main(void){
         printf("\nEnemy's Health: %d\n", easy_health);
       }
 
-      if (easy_health <= 0){
-        printf("Congrats on Defeating the Enemy!\n");
-      }
+  //    if (easy_health <= 0){
+    //    printf("Congrats on Defeating the Enemy!\n");
+   //   }
 
-      if (easy_health < 0){
+      if (easy_health > 0){
         int value = rand() % (easy_high - easy_low + 1) + easy_low;
         player_health = player_health - value;
         sleep(0.5);
         printf("\nThe Enemy Dealt %d damage!\n", value);
         printf("Your Health: %d\n", player_health);
         sleep(0.5);
+        } else {
+        printf("Congrats on Defeating the Enemy!\n");
+      }
       }
     }
 
-  }
+  
 
   if (choice == 2){
     printf("We need you to fight %d monsters nearby.\n", medium);
